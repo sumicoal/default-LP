@@ -1,3 +1,7 @@
+// import "@babel/polyfill";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 // getTime.jsをインポート
 import GetTime from './modules/getTime';
 import './scss/index.scss';

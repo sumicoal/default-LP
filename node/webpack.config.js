@@ -59,10 +59,21 @@ module.exports = smp.wrap({
               presets: [
                 [
                   '@babel/preset-env', {
-                  modules: false
+                  // 対象のブラウザを指定する
+                  "targets": {
+                    "ie": 11,
+                  },
+                  // 必要に応じて応じてpolyfillをかけてくれる
+                  "useBuiltIns": "usage",
+                  "corejs": 3,
+                  "modules": false,
+                  "debug": true
                 }
                 ]
-              ]
+              ],
+              // plugins: [
+              //   '@babel/plugin-transform-runtime'
+              // ],
             }
           }
         ]
@@ -111,8 +122,15 @@ module.exports = smp.wrap({
           },
         ]
       },
-
     ]
   },
+
+  // webpack-dev-serverの設定
+  devServer: {
+    contentBase: path.join(__dirname, '../'),
+    open: true,
+    host: '0.0.0.0',
+    useLocalIp: true
+  }
 });
 

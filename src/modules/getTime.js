@@ -1,3 +1,8 @@
+// import "core-js/modules/es.array.concat";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
+
 // export文を使ってGetTimeを定義。
 export default class GetTime {
   constructor() {
